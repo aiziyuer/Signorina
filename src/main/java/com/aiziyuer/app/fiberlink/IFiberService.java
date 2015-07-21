@@ -1,7 +1,9 @@
-package com.aiziyuer.app.fiberlink;
+package com.aiziyuer.app.fiberLink;
 
 /**
- * Created by lc on 15/7/22.
+ * 光纤有关的服务
  */
 public interface IFiberService {
+
+    void sayHello();
 }

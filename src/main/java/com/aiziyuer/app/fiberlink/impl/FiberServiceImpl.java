@@ -1,7 +1,15 @@
-package com.aiziyuer.app.fiberlink.impl;
+package com.aiziyuer.app.fiberLink.impl;
+
+import com.aiziyuer.app.fiberLink.IFiberService;
 
 /**
- * Created by lc on 15/7/22.
+ * 服务实现类
  */
-public class FiberServiceImpl {
+public class FiberServiceImpl implements IFiberService {
+
+    @Override
+    public void sayHello() {
+        System.out.println("Hello");
+
+    }
 }
