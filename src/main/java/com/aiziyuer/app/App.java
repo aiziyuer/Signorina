@@ -1,3 +1,5 @@
+package com.aiziyuer.app;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
