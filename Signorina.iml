@@ -90,6 +90,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.ibm:icu:1.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/com.ibm.icu_52.1.1.v201501240615.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.jruby:jruby-complete:1.7.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.4" level="project" />
   </component>

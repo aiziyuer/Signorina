@@ -136,6 +136,13 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/org.eclipse.jface.databinding_1.6.0.v20120912-132807.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.ibm</groupId>
+            <artifactId>icu</artifactId>
+            <version>1.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/com.ibm.icu_52.1.1.v201501240615.jar</systemPath>
+        </dependency>
 
         <!--jRuby支持-->
         <dependency>
