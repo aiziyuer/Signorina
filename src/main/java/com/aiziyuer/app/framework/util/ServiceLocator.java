@@ -1,6 +1,7 @@
 package com.aiziyuer.app.framework.util;
 
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -38,8 +39,7 @@ public class ServiceLocator implements BeanFactoryAware {
      *
      * @param beanName bean名称
      */
-    @SuppressWarnings("unchecked")
-    public <T> T getService(String beanName) {
-        return (T) beanFactory.getBean(beanName);
+    public <T> T getService(String beanName, Class<T> requiredType) {
+        return beanFactory.getBean(beanName, requiredType);
     }
 }
