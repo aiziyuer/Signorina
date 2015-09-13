@@ -39,7 +39,8 @@ public class ServiceLocator implements BeanFactoryAware {
      *
      * @param beanName bean名称
      */
-    public <T> T getService(String beanName, Class<T> requiredType) {
-        return beanFactory.getBean(beanName, requiredType);
+    @SuppressWarnings("unchecked")
+    public <T> T getService(String beanName ) {
+        return (T) beanFactory.getBean(beanName);
     }
 }

@@ -1,6 +1,9 @@
 package com.aiziyuer.app.ui.view;
 
+import com.aiziyuer.app.biz.IAreaBiz;
+import com.aiziyuer.app.framework.util.ServiceLocator;
 import com.aiziyuer.app.ui.view.area.AreaContentProvider;
+import com.aiziyuer.app.ui.view.area.AreaLabelProvider;
 import org.eclipse.jface.action.CoolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.StatusLineManager;
@@ -41,15 +44,25 @@ public class Main extends ApplicationWindow {
 
         sashForm.setWeights(new int[]{1, 2});
 
-        setContentProvider();
+        setProvider();
 
         addListener();
+
+        addInput();
 
         return container;
     }
 
-    private void setContentProvider() {
+    private void addInput() {
+
+        IAreaBiz  areaBiz = ServiceLocator.getInstance().getService("areaBiz");
+        treeViewer.setInput(areaBiz.queryAreas());
+
+    }
+
+    private void setProvider() {
         treeViewer.setContentProvider(new AreaContentProvider());
+        treeViewer.setLabelProvider(new AreaLabelProvider());
     }
 
     private void addListener() {
@@ -67,20 +80,17 @@ public class Main extends ApplicationWindow {
 
     @Override
     protected MenuManager createMenuManager() {
-        MenuManager menuManager = new MenuManager("menu");
-        return menuManager;
+        return new MenuManager("menu");
     }
 
     @Override
     protected CoolBarManager createCoolBarManager(int style) {
-        CoolBarManager coolBarManager = new CoolBarManager(style);
-        return coolBarManager;
+        return new CoolBarManager(style);
     }
 
     @Override
     protected StatusLineManager createStatusLineManager() {
-        StatusLineManager statusLineManager = new StatusLineManager();
-        return statusLineManager;
+        return new StatusLineManager();
     }
 
     @Override
